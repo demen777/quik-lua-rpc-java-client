@@ -21,7 +21,7 @@
         <dependency>
             <groupId>com.google.protobuf</groupId>
             <artifactId>protobuf-java</artifactId>
-            <version>3.4.0</version>
+            <version>3.10.0</version>
         </dependency>
 
         <dependency>
@@ -127,6 +127,9 @@
                 <groupId>org.xolstice.maven.plugins</groupId>
                 <artifactId>protobuf-maven-plugin</artifactId>
                 <version>0.5.1</version>
+        	<configuration>
+          		<protocExecutable>c:/bin/protoc.exe</protocExecutable>
+        	</configuration>
                 <executions>
                     <execution>
                         <goals>
@@ -136,35 +139,6 @@
                     </execution>
                 </executions>
             </plugin>
-
-	    <plugin>
-	    	<groupId>org.jacoco</groupId>
-	    	<artifactId>jacoco-maven-plugin</artifactId>
-	    	<version>0.7.6.201602180812</version>
-		<configuration>
-		    <excludes>
-		    	<exclude>qlua/**</exclude>
-			<exclude>qlua/*</exclude>
-		    </excludes>
-		</configuration>
-	    	<executions>
-		    <execution>
-		    	<id>prepare-agent</id>
-		    	<goals>
-			    <goal>prepare-agent</goal>
-		    	</goals>
-		    </execution>
-	    	</executions>
-	    </plugin>
-
-	    <plugin>
-      	   	<groupId>org.eluder.coveralls</groupId>
-    		<artifactId>coveralls-maven-plugin</artifactId>
-	    	<version>4.3.0</version>
-	    	<configuration>
-		    <repoToken>${env.repoToken}</repoToken>
-	    	</configuration>
-	    </plugin>
 
         </plugins>
     </build>
