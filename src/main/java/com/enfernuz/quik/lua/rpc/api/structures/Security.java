@@ -1,6 +1,7 @@
 package com.enfernuz.quik.lua.rpc.api.structures;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import lombok.AccessLevel;
@@ -12,6 +13,7 @@ import lombok.experimental.NonFinal;
 import java.util.Objects;
 
 @Value
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class Security {
 
     private static final String CODE = "code";
@@ -26,6 +28,9 @@ public class Security {
     private static final String LOT_SIZE = "lot_size";
     private static final String ISIN_CODE = "isin_code";
     private static final String MIN_PRICE_STEP = "min_price_step";
+    private static final String BSID = "bsid";
+    private static final String CUSIP_CODE = "cusip_code";
+    private static final String TRADE_CURRENCY = "trade_currency";
 
     String code;
     String name;
@@ -39,6 +44,9 @@ public class Security {
     String lotSize;
     String isinCode;
     String minPriceStep;
+    String bsid;
+    String cusip_code;
+    String trade_currency;
 
     @Getter(AccessLevel.NONE)
     @NonFinal
@@ -62,8 +70,12 @@ public class Security {
             @JsonProperty(MATURITY_DATE) final String matDate,
             @JsonProperty(LOT_SIZE) final String lotSize,
             @JsonProperty(ISIN_CODE) final String isinCode,
-            @JsonProperty(MIN_PRICE_STEP) final String minPriceStep) {
-
+            @JsonProperty(MIN_PRICE_STEP) final String minPriceStep,
+            @JsonProperty(BSID) final String bsid,
+            @JsonProperty(CUSIP_CODE) final String cusip_code,
+            @JsonProperty(TRADE_CURRENCY) String trade_currency
+    )
+    {
         this.code = code;
         this.name = name;
         this.shortName = shortName;
@@ -76,6 +88,9 @@ public class Security {
         this.lotSize = lotSize;
         this.isinCode = isinCode;
         this.minPriceStep = minPriceStep;
+        this.bsid = bsid;
+        this.cusip_code = cusip_code;
+        this.trade_currency = trade_currency;
     }
 
     @Override
@@ -142,6 +157,9 @@ public class Security {
                     .add(LOT_SIZE, lotSize)
                     .add(ISIN_CODE, isinCode)
                     .add(MIN_PRICE_STEP, minPriceStep)
+                    .add(BSID, bsid)
+                    .add(CUSIP_CODE, cusip_code)
+                    .add(TRADE_CURRENCY, trade_currency)
                     .toString();
         }
 
