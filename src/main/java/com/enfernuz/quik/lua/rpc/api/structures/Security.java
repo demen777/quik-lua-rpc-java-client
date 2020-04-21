@@ -45,8 +45,8 @@ public class Security {
     String isinCode;
     String minPriceStep;
     String bsid;
-    String cusip_code;
-    String trade_currency;
+    String cusipCode;
+    String tradeCurrency;
 
     @Getter(AccessLevel.NONE)
     @NonFinal
@@ -72,8 +72,8 @@ public class Security {
             @JsonProperty(ISIN_CODE) final String isinCode,
             @JsonProperty(MIN_PRICE_STEP) final String minPriceStep,
             @JsonProperty(BSID) final String bsid,
-            @JsonProperty(CUSIP_CODE) final String cusip_code,
-            @JsonProperty(TRADE_CURRENCY) String trade_currency
+            @JsonProperty(CUSIP_CODE) final String cusipCode,
+            @JsonProperty(TRADE_CURRENCY) String tradeCurrency
     )
     {
         this.code = code;
@@ -89,8 +89,8 @@ public class Security {
         this.isinCode = isinCode;
         this.minPriceStep = minPriceStep;
         this.bsid = bsid;
-        this.cusip_code = cusip_code;
-        this.trade_currency = trade_currency;
+        this.cusipCode = cusipCode;
+        this.tradeCurrency = tradeCurrency;
     }
 
     @Override
@@ -158,8 +158,8 @@ public class Security {
                     .add(ISIN_CODE, isinCode)
                     .add(MIN_PRICE_STEP, minPriceStep)
                     .add(BSID, bsid)
-                    .add(CUSIP_CODE, cusip_code)
-                    .add(TRADE_CURRENCY, trade_currency)
+                    .add(CUSIP_CODE, cusipCode)
+                    .add(TRADE_CURRENCY, tradeCurrency)
                     .toString();
         }
 
