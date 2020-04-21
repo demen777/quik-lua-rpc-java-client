@@ -28,8 +28,6 @@ public class Security {
     private static final String LOT_SIZE = "lot_size";
     private static final String ISIN_CODE = "isin_code";
     private static final String MIN_PRICE_STEP = "min_price_step";
-    private static final String BSID = "bsid";
-    private static final String CUSIP_CODE = "cusip_code";
     private static final String TRADE_CURRENCY = "trade_currency";
 
     String code;
@@ -44,9 +42,8 @@ public class Security {
     String lotSize;
     String isinCode;
     String minPriceStep;
-    String bsid;
-    String cusipCode;
     String tradeCurrency;
+
 
     @Getter(AccessLevel.NONE)
     @NonFinal
@@ -71,8 +68,6 @@ public class Security {
             @JsonProperty(LOT_SIZE) final String lotSize,
             @JsonProperty(ISIN_CODE) final String isinCode,
             @JsonProperty(MIN_PRICE_STEP) final String minPriceStep,
-            @JsonProperty(BSID) final String bsid,
-            @JsonProperty(CUSIP_CODE) final String cusipCode,
             @JsonProperty(TRADE_CURRENCY) String tradeCurrency
     )
     {
@@ -88,8 +83,6 @@ public class Security {
         this.lotSize = lotSize;
         this.isinCode = isinCode;
         this.minPriceStep = minPriceStep;
-        this.bsid = bsid;
-        this.cusipCode = cusipCode;
         this.tradeCurrency = tradeCurrency;
     }
 
@@ -157,8 +150,6 @@ public class Security {
                     .add(LOT_SIZE, lotSize)
                     .add(ISIN_CODE, isinCode)
                     .add(MIN_PRICE_STEP, minPriceStep)
-                    .add(BSID, bsid)
-                    .add(CUSIP_CODE, cusipCode)
                     .add(TRADE_CURRENCY, tradeCurrency)
                     .toString();
         }
