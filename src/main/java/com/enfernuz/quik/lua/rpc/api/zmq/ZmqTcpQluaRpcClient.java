@@ -516,7 +516,7 @@ public final class ZmqTcpQluaRpcClient extends AbstractTcpZmqClient implements R
 
     @Contract("_, _, null -> null; _, _, !null -> !null")
     @Override
-    public <T extends RemoteProcedure, U extends RpcResult<T>> U makeRPC(
+    public synchronized <T extends RemoteProcedure, U extends RpcResult<T>> U makeRPC(
             @NotNull final Class<T> remoteProcedureClass,
             final RpcArgs<T> args,
             @Nullable final Class<U> resultClass) throws RpcException {
