@@ -1,13 +1,16 @@
 package com.enfernuz.quik.lua.rpc.api.structures;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.google.common.base.MoreObjects;
 import lombok.*;
 import lombok.experimental.NonFinal;
 import org.jetbrains.annotations.NotNull;
 
+
 @Value
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class DepoLimit {
 
     private static final String SECURITY_CODE = "sec_code";
