@@ -362,16 +362,16 @@ message DepoLimit {
     string trdaccid = 2;
     string firmid = 3;
     string client_code = 4;
-    int32 openbal = 5; // NUMBER in QLUA
-    int32 openlimit = 6; // NUMBER in QLUA
-    int32 currentbal = 7; // NUMBER in QLUA
-    int32 currentlimit = 8; // NUMBER in QLUA
-    int32 locked_sell = 9; // NUMBER in QLUA
-    int32 locked_buy = 10; // NUMBER in QLUA
+    string openbal = 5; // NUMBER in QLUA
+    string openlimit = 6; // NUMBER in QLUA
+    string currentbal = 7; // NUMBER in QLUA
+    string currentlimit = 8; // NUMBER in QLUA
+    string locked_sell = 9; // NUMBER in QLUA
+    string locked_buy = 10; // NUMBER in QLUA
     string locked_buy_value = 11; // NUMBER in QLUA
     string locked_sell_value = 12; // NUMBER in QLUA
     string wa_position_price = 13; // NUMBER in QLUA
-    int32 limit_kind = 14; // NUMBER in QLUA
+    string limit_kind = 14; // NUMBER in QLUA
 }
 
 // Денежные позиции

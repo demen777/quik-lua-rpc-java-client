@@ -11,16 +11,16 @@ public class DepoLimitPbSerdeTest extends AbstractPbDeserializationTest<QluaStru
     private static final String TRD_ACC_ID = "2";
     private static final String FIRM_ID = "3";
     private static final String CLIENT_CODE = "4";
-    private static final int OPEN_BAL = 5;
-    private static final int OPEN_LIMIT = 6;
-    private static final int CURRENT_BAL = 7;
-    private static final int CURRENT_LIMIT = 8;
-    private static final int LOCKED_SELL = 9;
-    private static final int LOCKED_BUY = 10;
+    private static final String OPEN_BAL = "5";
+    private static final String OPEN_LIMIT = "6";
+    private static final String CURRENT_BAL = "7";
+    private static final String CURRENT_LIMIT = "8";
+    private static final String LOCKED_SELL = "9";
+    private static final String LOCKED_BUY = "10";
     private static final String LOCKED_BUY_VALUE = "11";
     private static final String LOCKED_SELL_VALUE = "12";
     private static final String WA_POSITION_PRICE = "13";
-    private static final int LIMIT_KIND = 14;
+    private static final String LIMIT_KIND = "14";
 
     @Override
     public @NotNull Deserializer<DepoLimit> getDeserializerUnderTest() {

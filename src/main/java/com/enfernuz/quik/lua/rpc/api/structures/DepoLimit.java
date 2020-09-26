@@ -32,16 +32,16 @@ public class DepoLimit {
     String trdAccId;
     String firmId;
     String clientCode;
-    int openBal;
-    int openLimit;
-    int currentBal;
-    int currentLimit;
-    int lockedSell;
-    int lockedBuy;
+    String openBal;
+    String openLimit;
+    String currentBal;
+    String currentLimit;
+    String lockedSell;
+    String lockedBuy;
     String lockedBuyValue;
     String lockedSellValue;
     String waPositionPrice;
-    int limitKind;
+    String limitKind;
 
     @Getter(AccessLevel.NONE)
     @NonFinal
@@ -54,16 +54,16 @@ public class DepoLimit {
             @JsonProperty(value = TRADING_ACCOUNT_ID, required = true) @NonNull final String trdAccId,
             @JsonProperty(value = FIRM_ID, required = true) @NonNull final String firmId,
             @JsonProperty(value = CLIENT_CODE, required = true) @NonNull final String clientCode,
-            @JsonProperty(value = OPEN_BALANCE, required = true) final int openBal,
-            @JsonProperty(value = OPEN_LIMIT, required = true) final int openLimit,
-            @JsonProperty(value = CURRENT_BALANCE, required = true) final int currentBal,
-            @JsonProperty(value = CURRENT_LIMIT, required = true) final int currentLimit,
-            @JsonProperty(value = LOCKED_SELL, required = true) final int lockedSell,
-            @JsonProperty(value = LOCKED_BUY, required = true) final int lockedBuy,
+            @JsonProperty(value = OPEN_BALANCE, required = true) final String openBal,
+            @JsonProperty(value = OPEN_LIMIT, required = true) final String openLimit,
+            @JsonProperty(value = CURRENT_BALANCE, required = true) final String currentBal,
+            @JsonProperty(value = CURRENT_LIMIT, required = true) final String currentLimit,
+            @JsonProperty(value = LOCKED_SELL, required = true) final String lockedSell,
+            @JsonProperty(value = LOCKED_BUY, required = true) final String lockedBuy,
             @JsonProperty(value = LOCKED_BUY_VALUE, required = true) @NonNull final String lockedBuyValue,
             @JsonProperty(value = LOCKED_SELL_VALUE, required = true) @NonNull final String lockedSellValue,
             @JsonProperty(value = WEIGHTED_AVERAGE_POSITION_PRICE, required = true) @NonNull final String waPositionPrice,
-            @JsonProperty(value = LIMIT_KIND, required = true) final int limitKind) {
+            @JsonProperty(value = LIMIT_KIND, required = true) final String limitKind) {
 
         this.secCode = secCode;
         this.trdAccId = trdAccId;

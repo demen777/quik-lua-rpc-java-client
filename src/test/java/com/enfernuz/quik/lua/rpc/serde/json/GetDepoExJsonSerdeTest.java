@@ -43,16 +43,16 @@ public class GetDepoExJsonSerdeTest {
                     .trdAccId("2")
                     .firmId("3")
                     .clientCode("4")
-                    .openBal(5)
-                    .openLimit(6)
-                    .currentBal(7)
-                    .currentLimit(8)
-                    .lockedSell(9)
-                    .lockedBuy(10)
+                    .openBal("5")
+                    .openLimit("6")
+                    .currentBal("7")
+                    .currentLimit("8")
+                    .lockedSell("9")
+                    .lockedBuy("10")
                     .lockedBuyValue("11")
                     .lockedSellValue("12")
                     .waPositionPrice("13")
-                    .limitKind(14)
+                    .limitKind("14")
                     .build();
 
 
