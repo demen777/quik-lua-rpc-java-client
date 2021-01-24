@@ -4,6 +4,7 @@ import com.enfernuz.quik.lua.rpc.io.transport.NetworkAddress;
 import com.enfernuz.quik.lua.rpc.io.transport.TcpGateway;
 import lombok.NonNull;
 import org.jetbrains.annotations.NotNull;
+import org.jetbrains.annotations.Nullable;
 import org.zeromq.ZMQ;
 
 import java.io.IOException;
@@ -89,4 +90,5 @@ abstract class AbstractTcpZmqClient implements TcpGateway {
             }
         }
     }
+
 }

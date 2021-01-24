@@ -7,6 +7,7 @@ import com.enfernuz.quik.lua.rpc.api.security.Securable;
 import com.enfernuz.quik.lua.rpc.api.messages.GetCandlesByIndex;
 import com.enfernuz.quik.lua.rpc.api.structures.*;
 import com.enfernuz.quik.lua.rpc.io.Gateway;
+import org.jetbrains.annotations.Nullable;
 
 import java.util.Map;
 
@@ -144,6 +145,8 @@ public interface QluaRpcClient extends Gateway, Securable {
     boolean qlua_SetWindowPos(SetWindowPos.Args args);
 
     Long qlua_sleep(long time);
+
+    Long qlua_ping();
 
     boolean qlua_SubscribeLevelIIQuotes(SubscribeLevel2Quotes.Args args);
 

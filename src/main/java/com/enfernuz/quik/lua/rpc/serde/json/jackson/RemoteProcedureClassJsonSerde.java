@@ -16,7 +16,7 @@ import java.util.Map;
 
 public final class RemoteProcedureClassJsonSerde {
 
-    private static final int PROCEDURES_COUNT = 82;
+    private static final int PROCEDURES_COUNT = 83;
     private static final Map<Class<? extends RemoteProcedure>, String> CLASS_TO_METHOD_NAME_MAP = createRegistry();
 
     static {
@@ -107,6 +107,7 @@ public final class RemoteProcedureClassJsonSerde {
         result.put(SetWindowCaption.class, "SetWindowCaption");
         result.put(SetWindowPos.class, "SetWindowPos");
         result.put(Sleep.class, "sleep");
+        result.put(Ping.class, "ping");
         result.put(SubscribeLevel2Quotes.class, "Subscribe_Level_II_Quotes");
         result.put(UnsubscribeLevel2Quotes.class, "Unsubscribe_Level_II_Quotes");
 

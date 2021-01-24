@@ -416,6 +416,11 @@ public final class ZmqTcpQluaRpcClient extends AbstractTcpZmqClient implements R
     }
 
     @Override
+    public @Nullable Long qlua_ping() {
+        return makeRPC(Ping.class, null, Ping.Result.class).getResult();
+    }
+
+    @Override
     public boolean qlua_SubscribeLevelIIQuotes(@NotNull final SubscribeLevel2Quotes.Args args) {
         return makeRPC(SubscribeLevel2Quotes.class, args, SubscribeLevel2Quotes.Result.class).isResult();
     }

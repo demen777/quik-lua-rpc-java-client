@@ -13,6 +13,7 @@ import com.enfernuz.quik.lua.rpc.serde.SerdeUtils;
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableSet;
 import lombok.NonNull;
+import lombok.extern.slf4j.Slf4j;
 import org.jetbrains.annotations.NotNull;
 
 import java.io.IOException;
@@ -33,6 +34,7 @@ import static java.util.Objects.requireNonNull;
  * @see <a href="https://github.com/Enfernuz/quik-lua-rpc">quik-lua-rpc</a>
  * @see <a href="http://zeromq.org/">ZeroMQ - Distributed Messaging</a>
  */
+@Slf4j
 public final class ZmqTcpQluaEventProcessor implements TcpQluaEventProcessor, ZmqSecurable {
 
     private ZmqTcpQluaEventPoller eventPoller;
@@ -90,6 +92,7 @@ public final class ZmqTcpQluaEventProcessor implements TcpQluaEventProcessor, Zm
             final QluaEvent event = eventPoller.poll();
             if (event != null) {
                 final byte[] eventData = event.getData();
+                log.debug("process event.getType()={}", event.getType());
                 for (final QluaEventHandler eventHandler : eventHandlers) {
                     switch (event.getType()) {
                         case ON_STOP:
@@ -103,6 +106,9 @@ public final class ZmqTcpQluaEventProcessor implements TcpQluaEventProcessor, Zm
                             break;
                         case ON_DISCONNECTED:
                             eventHandler.onDisconnected();
+                            break;
+                        case ON_PING:
+                            eventHandler.onPing();
                             break;
                         case ON_FIRM:
                             eventHandler.onFirm( serdeModule.deserialize(Firm.class, requireNonNull(eventData)) );

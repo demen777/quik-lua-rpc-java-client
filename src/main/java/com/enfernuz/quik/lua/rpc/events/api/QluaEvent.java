@@ -109,6 +109,7 @@ public final class QluaEvent {
         ON_DISCONNECTED,
         ON_CONNECTED,
         ON_CLEAN_UP,
-        ON_DATA_SOURCE_UPDATE;
+        ON_DATA_SOURCE_UPDATE,
+        ON_PING;
     }
 }

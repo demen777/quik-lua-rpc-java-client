@@ -42,6 +42,13 @@ public interface QluaEventHandler {
     default void onDisconnected() {}
 
     /**
+     * Функция обратного вызова для события терминала <b>OnPing</b>.
+     * <br/>
+     * Событие происходит при посылке команды ping.
+     */
+    default void onPing() {}
+
+    /**
      * Функция обратного вызова для события терминала <b>OnInit</b>.
      * <br/>
      * Событие происходит перед вызовом функции main().
