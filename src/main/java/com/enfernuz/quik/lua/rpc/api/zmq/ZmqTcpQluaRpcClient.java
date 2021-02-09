@@ -80,6 +80,7 @@ public final class ZmqTcpQluaRpcClient extends AbstractTcpZmqClient implements R
         zmqContext = ZMQ.context(1);
 
         reqSocket = zmqContext.socket(ZMQ.REQ);
+        reqSocket.setTCPKeepAlive(1);
         reqSocket.setLinger(0); // no waiting before closing the socket
 
         ZmqUtils.setSocketSecurity(reqSocket, authContext);

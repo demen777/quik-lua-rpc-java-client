@@ -185,6 +185,7 @@ abstract class AbstractZmqTcpQluaEventPoller extends AbstractTcpZmqClient implem
         zmqContext = ZMQ.context(1);
         zmqContext.setMaxSockets(1);
         subSocket = zmqContext.socket(ZMQ.SUB);
+        subSocket.setTCPKeepAlive(1);
         subSocket.setLinger(0); // no waiting before closing the socket
 
         for (final QluaEvent.EventType eventType : subscription) {
